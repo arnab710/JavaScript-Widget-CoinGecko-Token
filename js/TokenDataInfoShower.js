@@ -2,7 +2,7 @@
 export const tokenDataShower = (tokenData) => {
 	//selecting the div to show the data
 	const tokenDataDiv = document.getElementById(tokenData.id);
-	console.log(tokenData);
+
 	//changing number to billions
 	const market_cap = numberToBillions(tokenData.market_data.market_cap.usd);
 	const total_volume = numberToBillions(tokenData.market_data.total_volume.usd);
