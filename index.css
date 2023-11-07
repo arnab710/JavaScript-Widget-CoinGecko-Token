@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,400;1,600&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	list-style: none;
+}
+#mainHeader {
+	text-align: center;
+}
+#token-data-viewer {
+	max-width: max-content;
+	margin: 30vh auto;
+	border: 2px solid rgba(0, 0, 0, 0.115);
+	border-radius: 10px;
+}
+.token-div {
+	padding: 20px;
+	width: 600px;
+}
+.token-name-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 30px;
+	font-weight: 600;
+}
+.token-name {
+	color: rgba(84, 84, 250, 0.695);
+	font-size: 1.4rem;
+}
+.token-price {
+	font-size: 1.1rem;
+	color: rgba(0, 0, 0, 0.596);
+}
+.token-details {
+	margin-top: 40px;
+	display: flex;
+	justify-content: space-between;
+}
+.token-listItem {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+	border-left: 2px solid rgba(0, 0, 0, 0.319);
+	justify-content: center;
+	align-items: center;
+	width: 33.33%;
+}
+.token-listItem:first-child {
+	border-left: none;
+}
+.token-key {
+	font-weight: 400;
+}
+.token-value {
+	font-weight: 600;
+	font-size: 0.9rem;
+}
