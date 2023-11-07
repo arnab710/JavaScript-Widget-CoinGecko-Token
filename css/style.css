@@ -10,9 +10,9 @@
 #mainHeader {
 	text-align: center;
 }
-#token-data-viewer {
+.token-data-viewer {
 	max-width: max-content;
-	margin: 30vh auto;
+	margin: 10vh auto;
 	border: 2px solid rgba(0, 0, 0, 0.115);
 	border-radius: 10px;
 }
