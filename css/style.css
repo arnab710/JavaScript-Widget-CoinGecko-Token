@@ -43,7 +43,6 @@
 .token-listItem {
 	display: flex;
 	flex-direction: column;
-	row-gap: 10px;
 	border-left: 2px solid rgba(0, 0, 0, 0.319);
 	justify-content: center;
 	align-items: center;
@@ -58,4 +57,23 @@
 .token-value {
 	font-weight: 600;
 	font-size: 0.9rem;
+}
+
+@media screen and (max-width: 613px) {
+	.token-div {
+		width: 400px;
+		padding: 10px;
+	}
+}
+@media screen and (max-width: 419px) {
+	.token-div {
+		width: 300px;
+		padding: 5px;
+	}
+	.token-key {
+		font-size: 0.8rem;
+	}
+	.token-value {
+		font-size: 0.7rem;
+	}
 }
