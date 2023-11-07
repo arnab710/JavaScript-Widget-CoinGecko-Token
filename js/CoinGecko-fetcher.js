@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	fetchTokenData();
 });
 
+//data fetching
 const fetchTokenData = async () => {
 	try {
 		// fetching the data from API
@@ -25,17 +26,23 @@ const fetchTokenData = async () => {
 		//showing data inside a div
 		tokenDataShower(data);
 	} catch (err) {
-		console.log(err);
+		console.error(err);
 	}
 };
 
+//showing token info
 const tokenDataShower = (tokenData) => {
 	//selecting the div to show the data
 	const tokenDataDiv = document.getElementById("token-data-viewer");
 
-	//token properties array
-	const tokenProperties = [{ RANK: tokenData.market_cap_rank }, { MARKET_CAP: tokenData.market_data.market_cap.usd }, { TOTAL_VOLUME: tokenData.market_data.total_volume.usd }];
+	//changing number to billions
+	const market_cap = numberToBillions(tokenData.market_data.market_cap.usd);
+	const total_volume = numberToBillions(tokenData.market_data.total_volume.usd);
 
+	//token properties array
+	const tokenProperties = [{ RANK: tokenData.market_cap_rank }, { "MARKET CAP": `$${market_cap} USD` }, { "TOTAL VOLUME": `$${total_volume} USD` }];
+
+	//populating the HTML containing token info
 	tokenDataDiv.innerHTML = `<div class="token-div">
     <div class="token-name-div">
       <img src="${tokenData.image.small}" />
@@ -58,4 +65,12 @@ const tokenDataShower = (tokenData) => {
 					.join("")}
      </ul>
    </div>`;
+};
+
+//changing number to billions
+const numberToBillions = (value) => {
+	const numberInBillions = value / 1000000000;
+	const formattedNumber = numberInBillions.toFixed(2);
+
+	return formattedNumber;
 };
