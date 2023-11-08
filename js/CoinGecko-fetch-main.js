@@ -4,23 +4,14 @@ if (!document.scriptPreEvaluated) {
 
 	// adding listener to listen after DOM Rendered
 	document.addEventListener("DOMContentLoaded", () => {
-		//checking if The environmet is development or production
-		// let scriptSrc;
-
-		// // if (window.location.hostname === "127.0.0.1") {
-		// // 	scriptSrc = "./js/CoinGecko-fetch-main.js"; // if localhost then ScriptSrc will be relative path
-		// // } else {
-		// // 	scriptSrc = "https://javascript-widget-coingecko-token.vercel.app/js/CoinGecko-fetch-main.js";
-		// // }
-		// console.log(scriptSrc);
-		// getting the list of all of my scripts.
+		//listing all the valid tokens for further validation
 		const validTokens = ["bitcoin", "ethereum", "tether", "usd-coin"];
 
+		// getting the list of all the scripts inside DOM.
 		const allTokenScripts = Array.from(document.getElementsByTagName("script"));
 
+		//sorting out my own script
 		const useFulTokenScripts = allTokenScripts.filter((script) => validTokens.includes(script.getAttribute("data-token")));
-
-		//listing all the valid tokens for further validation
 
 		// Looping over it one by one
 		useFulTokenScripts.forEach((script) => {
