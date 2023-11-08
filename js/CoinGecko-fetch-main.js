@@ -1,10 +1,19 @@
 //checking if previously The Script tag was executed
 if (!document.scriptPreEvaluated) {
 	document.scriptPreEvaluated = true; // Only for the first time of Script execution, eventListener will be added
+
 	// adding listener to listen after DOM Rendered
 	document.addEventListener("DOMContentLoaded", () => {
+		//checking if The environmet is development or production
+		let scriptSrc;
+
+		if (window.location.hostname === "127.0.0.1") {
+			scriptSrc = "./js/CoinGecko-fetch-main.js"; // if localhost then ScriptSrc will be relative path
+		} else {
+			scriptSrc = "https://javascript-widget-coingecko-token.vercel.app/js/CoinGecko-fetch-main.js";
+		}
 		// getting the list of all of my scripts.
-		const tokenScripts = document.querySelectorAll('script[src="./js/CoinGecko-fetch-main.js"]');
+		const tokenScripts = document.querySelectorAll(`script[src="${scriptSrc}"]`);
 
 		//listing all the valid tokens for further validation
 		const validTokens = ["bitcoin", "ethereum", "tether", "usd-coin"];
