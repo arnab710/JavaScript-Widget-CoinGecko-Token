@@ -18,11 +18,6 @@ if (!document.scriptPreEvaluated) {
 			// getting the token name
 			try {
 				const tokenName = script.getAttribute("data-token");
-				//fetching the tokenInfo
-
-				//checking if token name not provided or wrong provided
-				if (!tokenName) throw new Error("Provide a Token Name");
-				else if (!validTokens.includes(tokenName)) throw new Error("Provide a valid token Name");
 
 				//fetching Token info from API and then displaying info
 				dataFetcher(tokenName);
